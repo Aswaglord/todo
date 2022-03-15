@@ -1,0 +1,97 @@
+$light-green: #F4FCD9;
+$green: #C5D8A4;
+$brown: #BB9981;
+$dark-brown: #534340;
+
+@mixin deleteButton {
+    width: 100px;
+    height: 30px;
+    background-color: $brown;
+    color: white;
+    font-size: 20px;
+    border: none;
+}
+
+@mixin functionalityButton {
+    width: 150px;
+    height: 50px;
+    background-color: $brown;
+    color: white;
+    font-size: 24px;
+    border: none;
+}
+
+
+body {
+    margin: 0;
+    background-color: $light-green;
+
+    .page-container {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 10% 60% 30%;
+
+        .title {
+            grid-column: span 2;
+            font-size: 2rem;
+            text-align: center
+        }
+
+        div {
+            h1 {
+                color: $dark-brown;
+                text-align: center;
+            }
+        }
+
+
+        .functionality{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            grid-column: span 2;
+
+            input {
+                width: 30%;
+                height: 10%;
+                border: none;
+                font-size: 20px;
+                border-radius: 5px;
+                text-indent: 10px;
+            }
+
+            button {
+                margin: 10px;
+                border-radius: 20px;
+                @include functionalityButton;
+            }
+        }
+    }
+}
+
+.to-do {
+    margin: 5px auto;
+    width: 75%;
+    height: 40px;
+    border: 1px solid $dark-brown;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    p {
+        margin-left: 10px;
+        font-size: 1.5rem;
+    }
+    .checked{
+        border-radius: 15px;
+        margin-right: 20px;
+    }
+    button {
+        @include deleteButton;
+        margin-right: 10px;
+    }
+}
+
